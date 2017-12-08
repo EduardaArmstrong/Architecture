@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
     @Override
     public void updateValor(int num) {
 
-        numero.setText(num);
+        numero.setText(String.valueOf(num));
 
     }
 }

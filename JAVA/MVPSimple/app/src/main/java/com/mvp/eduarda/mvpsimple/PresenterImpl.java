@@ -6,12 +6,13 @@ package com.mvp.eduarda.mvpsimple;
 
 public class PresenterImpl  implements MainMVP.Presenter{
 
-    private ModelImpl model;
-    private final MainMVP.View view;
+    private  MainMVP.View view;
+    private  ModelImpl model;
     private int soma = 0;
 
     public PresenterImpl(MainMVP.View view) {
         this.view = view;
+        this.model = new ModelImpl();
     }
 
     @Override
