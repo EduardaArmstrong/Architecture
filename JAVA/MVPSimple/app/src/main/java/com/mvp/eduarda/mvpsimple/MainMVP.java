@@ -7,18 +7,22 @@ package com.mvp.eduarda.mvpsimple;
 public interface MainMVP {
 
     interface View{
-        void updateValor(int num);
-
+        void updateValor(String num);
     }
 
     interface Presenter{
-        void clickBotao();
+        void clickBotaoSomar();
+        void clickBotaoSalvar(String valor);
+        void clickBotaoZerar();
+        void buscaValor();
 
     }
 
     interface Model{
-
         int somar();
+        void salvar(String valor);
+        void zerar();
+        String recuperarValor();
 
     }
 }

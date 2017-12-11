@@ -10,8 +10,9 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
     private TextView numero;
     private Button botaoSoma;
+    private Button botaoSalvar;
+    private Button botaoZerar;
     private PresenterImpl presenter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +21,33 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
         numero = (TextView) findViewById(R.id.numero);
         botaoSoma = (Button) findViewById(R.id.botaoSoma);
+        botaoSalvar = (Button) findViewById(R.id.botaoSalvar);
+        botaoZerar = (Button) findViewById(R.id.botaoZerar);
+
         presenter = new PresenterImpl(this);
+
+        presenter.buscaValor();
 
         botaoSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.clickBotao();
+                presenter.clickBotaoSomar();
+            }
+        });
+
+        botaoSalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.clickBotaoSalvar(numero.getText().toString());
+
+            }
+        });
+
+        botaoZerar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.clickBotaoZerar();
+
             }
         });
 
@@ -33,9 +55,9 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
 
 
     @Override
-    public void updateValor(int num) {
-
-        numero.setText(String.valueOf(num));
-
+    public void updateValor(String num) {
+        numero.setText(num);
     }
+
+
 }

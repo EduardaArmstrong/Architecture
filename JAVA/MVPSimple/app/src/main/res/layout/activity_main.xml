@@ -29,5 +29,23 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:id="@+id/botaoSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salvar"
+        app:layout_constraintTop_toBottomOf="@+id/botaoSoma"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/botaoZerar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zerar"
+        app:layout_constraintTop_toBottomOf="@+id/botaoSalvar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 
 </android.support.constraint.ConstraintLayout>
