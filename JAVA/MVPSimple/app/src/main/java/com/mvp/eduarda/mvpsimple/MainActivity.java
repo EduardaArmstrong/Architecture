@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements MainMVP.View {
         botaoSalvar = (Button) findViewById(R.id.botaoSalvar);
         botaoZerar = (Button) findViewById(R.id.botaoZerar);
 
-        presenter = new PresenterImpl(this);
+        presenter = new PresenterImpl(this,MVPSimples.getInstance().getPreferences());
 
         presenter.buscaValor();
 

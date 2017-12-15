@@ -26,7 +26,12 @@ public class Preferences {
 
     public String buscar(String key){
 
-        return sharedPreferences.getString(key,"");
+        String valor = sharedPreferences.getString(key,"");
+
+        if(valor == null || valor.isEmpty()){
+            valor = "0";
+        }
+        return valor;
 
     }
 

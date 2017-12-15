@@ -8,8 +8,11 @@ public class ModelImpl implements MainMVP.Model {
 
     private int soma ;
     private String valor;
-    private MVPSimples mvpSimples = new MVPSimples() ;
-    private Preferences preferences = mvpSimples.getPreferences();
+    private Preferences preferences;
+
+    public ModelImpl(Preferences preferences) {
+        this.preferences = preferences;
+    }
 
     @Override
     public int somar() {

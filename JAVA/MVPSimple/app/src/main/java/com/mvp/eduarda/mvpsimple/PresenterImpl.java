@@ -1,7 +1,5 @@
 package com.mvp.eduarda.mvpsimple;
 
-import android.content.Context;
-
 /**
  * Created by Eduarda on 01/12/2017.
  */
@@ -13,9 +11,10 @@ public class PresenterImpl  implements MainMVP.Presenter{
     private int soma = 0;
     private String resultadoBusca;
 
-    public PresenterImpl(MainMVP.View view ) {
+    public PresenterImpl(MainMVP.View view , Preferences preferences) {
         this.view = view;
-        this.model = new ModelImpl();
+        this.model = new ModelImpl(preferences);
+
     }
 
     @Override
