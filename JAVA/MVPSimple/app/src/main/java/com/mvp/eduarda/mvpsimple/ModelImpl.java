@@ -29,6 +29,7 @@ public class ModelImpl implements MainMVP.Model {
 
     @Override
     public void zerar() {
+    	
         preferences.salvar("number", "0");
 
     }
