@@ -8,10 +8,8 @@ public class ModelImpl implements MainMVP.Model {
 
     private int soma ;
     private String valor;
-    MVPSimples mvpSimples = new MVPSimples();
-
-    private static final String ARQUIVO_VALOR = "ArquivoValor";
-    Arquivo arquivo = new Arquivo(mvpSimples.getInstance().getSharedPreferences(ARQUIVO_VALOR ,0));
+    private MVPSimples mvpSimples = new MVPSimples() ;
+    private Preferences preferences = mvpSimples.getPreferences();
 
     @Override
     public int somar() {
@@ -23,18 +21,18 @@ public class ModelImpl implements MainMVP.Model {
     @Override
     public void salvar(String valor) {
 
-        arquivo.salvar("number", valor);
+        preferences.salvar("number", valor);
     }
 
     @Override
     public void zerar() {
-        arquivo.salvar("number", "0");
+        preferences.salvar("number", "0");
 
     }
 
     @Override
     public String recuperarValor() {
-        valor = arquivo.buscar("number");
+        valor = preferences.buscar("number");
         soma = Integer.parseInt(valor);
         return valor;
     }
